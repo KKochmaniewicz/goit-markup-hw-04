@@ -1,7 +1,9 @@
+/* ZMIENNE */
 :root {
   --color-text-primary: #212121;
   --color-text-light: #757575;
   --color-active: #2196f3;
+  --color-media: #afb1b8;
   --bgcolor-dark: #2f303a;
   --bgcolor-light: #ffffff;
   --font-roboto: 'Roboto', sans-serif;
@@ -11,9 +13,13 @@
   --font-weight700: 700;
   --font-weight900: 900;
 }
+/* RESET */
 * {
   margin: 0;
   padding: 0;
+}
+* {
+  outline: none;
 }
 ul {
   list-style: none;
@@ -38,6 +44,7 @@ body {
 .section {
   padding: 94px 0;
 }
+/* HEADER */
 .header {
   padding: 24px 0px 25px;
   border-bottom: 1px solid #ececec;
@@ -80,24 +87,30 @@ body {
   gap: 50px;
   align-items: center;
 }
-.contact-link,
-.contact-tel {
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   color: var(--color-text-light);
   font-size: 14px;
   line-height: 1.14;
   font-weight: 500;
+  fill: currentColor;
 }
 .link:hover,
-.contact-link:hover,
 .link:focus,
-.contact-link:focus,
-.contact-tel:hover,
-.contact-tel:focus {
+.contact-link:hover,
+.contact-link:focus {
   color: var(--color-active);
 }
+/* HERO */
 .hero {
   background-color: var(--bgcolor-dark);
   text-align: center;
+  background-image: url(../images/hero.jpg),
+    linear-gradient(to top, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4));
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
 }
 .hero-slogan {
   font-weight: var(--font-weight900);
@@ -122,9 +135,17 @@ body {
   margin-bottom: 106px;
   padding: 10px 41px 10px 42px;
 }
+/* NASZE ATUTY */
 .lorem-list {
   display: flex;
   gap: 30px;
+}
+.lorem-list-icon {
+  border: none;
+  background-color: #f5f4fa;
+  border-radius: 4px;
+  padding: 25px 102.34px;
+  margin-bottom: 30px;
 }
 .lorem {
   font-weight: var(--font-weight700);
@@ -139,11 +160,13 @@ body {
   line-height: 1.71;
   color: var(--color-text-light);
 }
+/* CZYM SIĘ ZAJMUJEMY */
 .duties {
   margin-top: -94px;
 }
 .duties-title,
-.our-team {
+.our-team,
+.our-customers {
   font-weight: var(--font-weight700);
   font-size: 36px;
   line-height: 1.67;
@@ -152,10 +175,13 @@ body {
   margin-bottom: 50px;
 }
 .duties-list,
-.our-team-list {
+.our-team-list,
+.our-customers-list {
   display: flex;
+  justify-content: center;
   gap: 30px;
 }
+/* NASZ ZESPÓŁ */
 .our-team {
   padding-top: -94px;
 }
@@ -182,11 +208,78 @@ body {
   line-height: 1.1875;
   color: var(--color-text-light);
   margin-top: 10px;
-  padding-bottom: 30px;
 }
+.team-social-media {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  padding: 16px 32px 30px;
+}
+.social-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: var(--color-media);
+  padding: 12px;
+  border-radius: 50%;
+}
+.social-media:hover,
+.social-media:focus {
+  fill: var(--bgcolor-light);
+  background-color: var(--color-active);
+}
+/* NASI KLIENCI */
+.our-customers-list-item {
+  fill: #afb1b8;
+  box-sizing: border-box;
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+  padding: 17.71px 32px 14.25px 32px;
+}
+.our-customers-list-item:focus,
+.our-customers-list-item:hover {
+  cursor: pointer;
+  fill: var(--color-active);
+  border-color: var(--color-active);
+}
+/* FOOTER */
 .footer {
   color: var(--color-text-light);
   padding: 60px 0;
+  background-color: var(--bgcolor-dark);
+}
+.footer-wrapper {
+  display: flex;
+  gap: 70px;
+}
+.footer-social {
+  margin-top: 12px;
+}
+.footer-social-media {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  padding-top: 20px;
+}
+.footer-social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: var(--bgcolor-light);
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 12px;
+  border-radius: 50%;
+}
+.footer-social-icon:focus,
+.footer-social-icon:hover {
+  background-color: var(--color-active);
+}
+.join-us {
+  font: var(--font-roboto);
+  font-weight: var(--font-weight700);
+  font-size: 14px;
+  line-height: 1.14;
+  color: var(--bgcolor-light);
 }
 .footer-list {
   font-size: 14px;
@@ -205,6 +298,8 @@ body {
 .footer-link:focus {
   color: var(--color-active);
 }
+/* PORTFOLIO */
+/* KATEGORIE */
 .category {
   display: flex;
   gap: 8px;
@@ -230,10 +325,17 @@ body {
     0px 2px 2px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
 }
+/* SIATKA PRZYKŁADÓW */
 .examples-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
+}
+.examples:hover,
+.examples:focus {
+  cursor: pointer;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 .photos-description {
   background: #ffffff;
@@ -257,7 +359,4 @@ body {
   margin-top: 4px;
   margin-left: 24px;
   padding-bottom: 20px;
-}
-.footer {
-  background-color: var(--bgcolor-dark);
 }
